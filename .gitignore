@@ -1,0 +1,9 @@
+# data/ and plots/ contents are kept out of git; each directory is kept via .gitkeep.
+data/**
+!data/.gitkeep
+plots/**
+!plots/.gitkeep
+
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
