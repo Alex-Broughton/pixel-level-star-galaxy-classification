@@ -15,3 +15,14 @@ This project recovers sub-band spectral information from LSST broadband photomet
 * `python/` scripts (kept minimal)
 * `data/` inputs and outputs (not tracked)
 * `plots/` figures (not tracked)
+
+## Monochromatic QE curves
+
+`python/monochromatic_qe.py` reads the binned monochromatic flats (`cpMonochromaticFlatBinned`, DM-52142) for all LSSTCam science detectors and writes one table per detector to `data/monochromatic_qe/<scan>/`, with superpixels as rows and wavelengths (nm) as columns. Run once per scan at S3DF with the LSST stack set up:
+
+```bash
+python python/monochromatic_qe.py none
+python python/monochromatic_qe.py u
+```
+
+Values are not yet normalized across the focal plane; that code is still pending.
